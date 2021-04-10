@@ -109,11 +109,3 @@ function Get-ToDoTxt {
     } #END
 
 } #FUNCTION
-
-
-# Special Key Value Tag
-$SpecialKeyValueMatch = $ToDo | Select-String -Pattern "([^\s]+)\:([^\s]+)" -AllMatches
-$SpecialKeyValues = $SpecialKeyValueMatch.matches.value
-foreach ($SpecialKeyValue in $SpecialKeyValues) {
-    $ToDo = $ToDo.replace($SpecialKeyValue, '')
-}
