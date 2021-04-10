@@ -1,9 +1,9 @@
 function Get-ToDoTxt {
     <#
         .SYNOPSIS
-            Gets a ToDo.txt formatted Files Contents and converts it to a PowerShell Object
+            Gets a ToDo.txt formatted File's Contents and converts it to a PowerShell Object
         .DESCRIPTION
-            Converts ToDo.txt formatting to a PowerShell Object with the aim of producting an Object that can be rendered out to a usable ToDo.txt File
+            Converts ToDo.txt formatting to a PowerShell Object with the aim of producing an Object that can be rendered out to a usable ToDo.txt File
         .PARAMETER ToDoTxt
             Path to the ToDo.txt formatted File
         .EXAMPLE
