@@ -75,7 +75,7 @@ function Get-ToDoTxt {
             }
 
             ## Creation Date Only
-            if (($Dates.count -eq '1') -and ($Completed - 'x')) {
+            if (($Dates.count -eq '1') -and ($Completed -ne 'x')) {
                 $StartDate = $Dates
             }
             $Dates = $NULL

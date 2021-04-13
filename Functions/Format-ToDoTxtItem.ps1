@@ -24,16 +24,28 @@ function Format-ToDoTxtItem {
 
     PROCESS {
         foreach ($ToDoTxtItem in $ToDoTxtItems) {
-            $ToDoTxtItemFormatted = ($ToDoTxtItem.Completed).Trim()
-            $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.Priority).Trim()
-            $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.CompletionDate).Trim()
-            $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.StartDate).Trim()
-            $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.ToDo).Trim()
-            $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.ProjectTags).Trim()
-            $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.ContextTags).Trim()
-
+            if ($NULL -ne $ToDoTxtItem.completed){
+                $ToDoTxtItemFormatted = ($ToDoTxtItem.Completed).Trim()
+            }
+            if ($NULL -ne $ToDoTxtItem.Priority) {
+                $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.Priority).Trim()
+            }
             
-            $ToDoTxtItemsFormatted += $ToDoTxtItemFormatted
+            if ($NULL -ne $ToDoTxtItem.CompletionDate) {
+                $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.CompletionDate).Trim()
+            }
+            if ($NULL -ne $ToDoTxtItem.StartDate) {
+                $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.StartDate).Trim()
+            }
+            $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.ToDo).Trim()
+            if ($NULL -ne $ToDoTxtItem.ProjectTags) {
+                $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.ProjectTags).Trim()
+            }
+            if ($NULL -ne $ToDoTxtItem.ContextTags) {
+                $ToDoTxtItemFormatted = ($ToDoTxtItemFormatted + " " + $ToDoTxtItem.ContextTags).Trim()
+            }
+
+                        $ToDoTxtItemsFormatted += $ToDoTxtItemFormatted
             $ToDoTxtItemFormatted = $Null
         }
     } #PROCESS
